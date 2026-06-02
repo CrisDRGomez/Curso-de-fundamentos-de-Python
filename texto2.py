@@ -36,9 +36,9 @@ Para ello usaremos el script para imprimir cada carácter según su índice:
 "print(texto[índice])"\n""")
 
 print("================================================================================================")
-
 print("\nEjemplo de acceso con índices positivos:\n")
-
+print("================================================================================================\n")
+print("================================================================================================")
 print("""Cáracter  Resultado\n""")
 print("   " + texto[0] + "      Primer espacio [0] del índice de la cadena de texto") # imprime "E"
 print("   " + texto[1] + "      Segundo espacio [1] del índice de la cadena de texto") # imprime "s"
@@ -56,14 +56,14 @@ print("   " + texto[12] + "      Decimotercer espacio [12] del índice de la cad
 print("   " + texto[13] + "      Decimocuarto espacio [13] del índice de la cadena de texto") # imprime "x"
 print("   " + texto[14] + "      Decimoquinto espacio [14] del índice de la cadena de texto") # imprime "t"
 print("   " + texto[15] + "      Decimosexto espacio [15] del índice de la cadena de texto") # imprime "o"
-
+print("================================================================================================\n")
 # Esto ocurre porque los indices son positivos pero ¿Qué pasa si usamos índices negativos?
 print("\nEsto ocurre porque los indices son positivos pero ¿Qué pasa si usamos índices negativos?\n")
 
-print("================================================================================================")
 # También podemos usar índices negativos para acceder a los caracteres desde el final de la cadena. Por ejemplo:
-print("\nEjemplo de acceso con índices negativos:\n")
-
+print("================================================================================================\n")
+print("Ejemplo de acceso con índices negativos:\n")
+print("================================================================================================\n")
 print("""Cáracter  Resultado\n""")
 print("   " + texto[-1] + "      Último espacio [-1] del índice de la cadena de texto") # o
 print("   " + texto[-2] + "      Penúltimo espacio [-2] del índice de la cadena de texto") # t    
@@ -111,46 +111,147 @@ El slicing se realiza utilizando la sintaxis [inicio:fin:paso], donde "inicio" e
 "fin" es el índice de fin (puede ser cualquier valor dentro de la longitud de la cadena y puede estar vacío) y "paso" es el número de elementos a saltar. 
 
 Si omitimos alguno de los parámetros, se asume un valor predeterminado. Por ejemplo:\n""")
-print("""================================================================================================\n""")
 
 # Obtener una subcadena de texto con slicing
-subcadena = texto[0:10] # Esto obtendrá los caracteres desde el índice 0 hasta el índice 9 (no incluido)
+subcadena = texto[0:15] # Esto obtendrá los caracteres desde el índice 0 hasta el índice 14 (no incluido)
+print("================================================================================================\n")
 print("Ejemplo de obtener una subcadena de texto con slicing con un índice específico:\n")
-print("Al tener la siguiente subcadena de texto:\n\n subcadena = texto[0:10]\n\n el resultado será:\n")
-print(subcadena + "\n") # Esto imprimirá "Este es un "
-
+print("================================================================================================\n")
+print("Al tener la siguiente variable:\n\n subcadena = texto[0:15]\n\n el resultado será:\n")
+print(subcadena + "\n") # Esto imprimirá "Este es un texto"
+print("recordando que los índices en la cadena de texto son:\n")
+print(" E    s    t    e         e    s         u    n          t     e     x     t     o")
+print("[0]  [1]  [2]  [3]  [4]  [5]  [6]  [7]  [8]  [9]  [10]  [11]  [12]  [13]  [14]  [15]\n")
+print("""\ny que la variable esta obteniendo los caracteres desde el índice [0] hasta el índice [14] (el valor del índice [15] 
+no esta incluido por que el slicing en Python no incluye el resultado del índice final)\n""")
 
 # Obtener una subcadena desde el inicio hasta un índice específico
 subcadena = texto[:4] # Esto obtendrá los caracteres desde el inicio hasta el índice 3 (no incluido)
+print("================================================================================================\n")
 print("Ejemplo de obtener una subcadena desde un valor predeterminado hasta un índice específico:\n")
-print("Al tener la siguiente subcadena de texto:\n\n subcadena = texto[:4]\n\n el resultado será:\n")
+print("================================================================================================\n")
+print("Al tener la siguiente variable:\n\n subcadena = texto[:4]\n\n el resultado será:\n")
 print(subcadena + "\n") # Esto imprimirá "Este"
+print(" E    s    t    e         e    s         u    n          t     e     x     t     o")
+print("[0]  [1]  [2]  [3]  [4]  [5]  [6]  [7]  [8]  [9]  [10]  [11]  [12]  [13]  [14]  [15]\n")
+print("""\ny que la variable esta obteniendo los caracteres desde el inicio ya que el índice de inicio está vacío y el 
+valor predeterminado siempre es [0] y hasta el índice [4] (4 no incluido)\n""")
 
 # Obtener una subcadena desde un índice específico hasta el final
 subcadena = texto[5:] # Esto obtendrá los caracteres desde el índice 5 hasta el final de la cadena
+print("================================================================================================\n")
 print("Ejemplo de obtener una subcadena desde un índice específico hasta un valor predeterminado:\n")
-print("Al tener la siguiente subcadena de texto:\n\n subcadena = texto[5:]\n\n el resultado será:\n")
+print("================================================================================================\n")
+print("Al tener la siguiente variable:\n\n subcadena = texto[5:]\n\n el resultado será:\n")
 print(subcadena + "\n") # Esto imprimirá "es un texto"
+print(" E    s    t    e         e    s         u    n          t     e     x     t     o")
+print("[0]  [1]  [2]  [3]  [4]  [5]  [6]  [7]  [8]  [9]  [10]  [11]  [12]  [13]  [14]  [15]\n")
+print("""\ny que la variable esta obteniendo los caracteres desde el índice [5] hasta el índice [15], observa que el indice final esta vacío por lo que el toma el valor predeterminado 
+y el valor predeterminado en el indice final es 15 (el valor del índice [15] 
+no esta incluido por que el slicing en Python no incluye el resultado del índice final)\n""")
 
 # Obtener una subcadena con un paso específico
 subcadena = texto[0:16:2]# Esto obtendrá los caracteres desde el índice 0 hasta el índice 15 (no incluido) con un paso de 2
+print("================================================================================================\n")
 print("Ejemplo de obtener una subcadena con un paso específico:\n")
-print("Al tener la siguiente subcadena de texto:\n\n subcadena = texto[0:16:2]\n\n el resultado será:\n")
+print("================================================================================================\n")
+print("Al tener la siguiente variable:\n\n subcadena = texto[0:16:2]\n\n el resultado será:\n")
 print(subcadena + "\n") # Esto imprimirá "Et s n eto"
 
+print("================================================================================================\n")
 # También podemos usar índices negativos en el slicing. Por ejemplo:
 print("También podemos usar índices negativos en el slicing. Por ejemplo:\n")
+
+print("================================================================================================\n")
 # Obtener una subcadena desde el final hasta un índice específico
 subcadena = texto[-5:] # Esto obtendrá los últimos 5 caracteres de la cadena
-print("Al tener la siguiente subcadena de texto:\n\n subcadena = texto[-5:]\n\n el resultado será:\n")
-print(subcadena) # Esto imprimirá "texto"
+print("Al tener la siguiente variable:\n\n subcadena = texto[-5:]\n\n el resultado será:\n")
+print(subcadena + "\n") # Esto imprimirá "texto"
 
+print("================================================================================================\n")
 # Obtener una subcadena desde un índice específico hasta el final
 subcadena = texto[:-5] # Esto obtendrá los caracteres desde el inicio hasta los últimos 5 caracteres (no incluido)
-print("Al tener la siguiente subcadena de texto:\n\n subcadena = texto[:-5]\n\n el resultado será:\n")
-print(subcadena) # Esto imprimirá "Este es un "
+print("Al tener la siguiente variable:\n\n subcadena = texto[:-5]\n\n el resultado será:\n")
+print(subcadena + "\n") # Esto imprimirá "Este es un "
 
+print("""================================================================================================
+El método replace()\n================================================================================================\n""")
+
+# El método replace() en Python se utiliza para reemplazar una subcadena específica por otra subcadena en una cadena de texto.
+# La sintaxis del método replace() es la siguiente:
+# cadena.replace("subcadena_a_reemplazar", "nueva_subcadena")
+print("""\nEl método replace() en Python se utiliza para reemplazar una subcadena específica por otra subcadena en una cadena de texto.
+La sintaxis del método replace() es la siguiente:
+
+cadena.replace("subcadena_a_reemplazar", "nueva_subcadena")\n""")
 
 #Ejemplo
+print("================================================================================================\n")
+print("Ejemplo de uso del método replace():\n")
+print("================================================================================================\n")
 curso = "Este es un curso de Javascript"
-print(curso.replace("Javascript", "Python")) # Esto reemplazará "Javascript" por "Python" en la cadena de texto 
+print("\nAl tener la siguiente variable:\n\n curso = 'Este es un curso de Javascript'\n\n el resultado de usar el método replace() para reemplazar 'Javascript' por 'Python' será:\n")
+print(curso.replace("Javascript", "Python" + "\n")) # Esto reemplazará "Javascript" por "Python" en la cadena de texto 
+
+# También podemos usar el método replace() para reemplazar todas las ocurrencias de una subcadena en una cadena de texto. Por ejemplo:
+print("También podemos usar el método replace() para reemplazar todas las ocurrencias de una subcadena en una cadena de texto. Por ejemplo:\n")
+texto = "Python es un lenguaje de programación. Python es fácil de aprender."
+print("\nAl tener la siguiente variable:\n\n texto = 'Python es un lenguaje de programación. Python es fácil de aprender.'\n\n el resultado de usar el método replace() para reemplazar 'Python' por 'JavaScript' será:\n")
+print(texto.replace("Python", "JavaScript")) # Esto reemplazará todas las ocurrencias de "Python" por "JavaScript" en la cadena de texto 
+print("\n================================================================================================\n")
+
+print("""================================================================================================
+El método split()\n================================================================================================\n""")
+
+# El método split() en Python se utiliza para dividir una cadena de texto en una lista de subcadenas, utilizando un separador específico.
+# La sintaxis del método split() es la siguiente:
+# cadena.split("separador")
+print("""\nEl método split() en Python se utiliza para dividir una cadena de texto en una lista de subcadenas, utilizando un separador específico.
+La sintaxis del método split() es la siguiente:
+
+cadena.split("separador")\n""")
+
+#Ejemplo
+print("================================================================================================\n")
+print("Ejemplo de uso del método split():\n")
+print("================================================================================================\n")
+textoDivido = texto.split(" ") # Esto dividirá la cadena en una lista de palabras utilizando el espacio como separador
+print("\nAl tener la siguiente variable:\n\n textoDividido = texto.split(" ")\n\nobtenemos el resultado de dividir la cadena en una lista de palabras utilizando el espacio como separador:\n")
+
+print(textoDivido) # Esto mostrará la lista de palabras resultante
+
+# También podemos usar el método split() para dividir una cadena en subcadenas utilizando un separador específico. Por ejemplo:
+print("\n\nTambién podemos usar el método split() para dividir una cadena en subcadenas utilizando un separador específico. Por ejemplo:\n")
+textoDividido = texto.split(".") # Esto dividirá la cadena en una lista de subcadenas utilizando el punto como separador
+print("\nAl tener la siguiente variable:\n\n textoDividido = texto.split(""."")\n\n obtenemos el resultado de dividir la cadena en una lista de subcadenas utilizando el punto como separador:\n")
+print(textoDividido) # Esto mostrará la lista de subcadenas resultante
+print("\n================================================================================================\n")
+
+#Podemos Normalizar el texto utilizando el método lower() para convertirlo a minúsculas o el método upper() para convertirlo a mayúsculas. Por ejemplo:
+print("""================================================================================================
+El método lower() se utiliza para convertir una cadena de texto a minúsculas.
+El método upper() se utiliza para convertir una cadena de texto a mayúsculas.
+================================================================================================\n""")
+texto = "Python es un lenguaje de programación."
+print("\nAl tener la siguiente variable:\n\n texto = 'Python es un lenguaje de programación.'\n\n el resultado de usar el método lower() para convertir la cadena a minúsculas será:\n")
+print(texto.lower()) # Esto convertirá toda la cadena a minúsculas  
+
+print("\nAl tener la siguiente variable:\n\n texto = 'Python es un lenguaje de programación.'\n\n el resultado de usar el método upper() para convertir la cadena a mayúsculas será:\n")
+print(texto.upper()) # Esto convertirá toda la cadena a mayúsculas
+
+#Podemos buscar palabras específicas en la cadena utilizando el método find() o el operador in. Por ejemplo:
+print("""================================================================================================
+El método find() se utiliza para buscar la posición de la primera ocurrencia de una subcadena en una cadena de texto. Si la subcadena no se encuentra, devuelve -1.
+El operador in se utiliza para verificar si una subcadena está presente en una cadena de texto, devolviendo True si está presente y False si no lo está.
+================================================================================================\n""")
+texto = "Python es un lenguaje de programación."
+print("\nAl tener la siguiente variable:\n\n texto = 'Python es un lenguaje de programación.'\n\n el resultado de usar el método find() para buscar la posición de la primera ocurrencia de 'lenguaje' será:\n")
+print(texto.find("lenguaje")) # Esto devolverá la posición de la primera ocurrencia de "lenguaje" en la cadena de texto
+print("\nQue significa que la palabra 'lenguaje' comienza en el índice [13] de la cadena de texto, recordando que los índices comienzan en 0.\n")
+
+print("\nAl tener la siguiente variable:\n\n texto = 'Python es un lenguaje de programación.'\n\n el resultado de usar el operador in para verificar si 'programación' está presente en la cadena será:\n")
+print("programación" in texto) # Esto devolverá True porque "programación" está presente en la cadena de texto  
+print("\nPor que la palabra 'programación' está presente en la cadena de texto, por lo tanto el operador in devuelve True.\n")
+
+
+#En resumen, el método replace() nos permite reemplazar subcadenas en una cadena de texto, el método split() nos permite dividir una cadena en una lista de subcadenas utilizando un separador específico,
